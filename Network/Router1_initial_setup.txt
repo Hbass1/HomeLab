@@ -1,0 +1,40 @@
+enable
+
+Config t
+
+hostname Router1
+enable secret cisco
+ipv6 unicast-routing
+
+line con 0
+password cisco
+exit
+
+ip dhcp pool MANAGEMENT
+network 10.0.0.0 255.255.255.240
+default 10.0.0.1
+dns 10.0.0.1
+
+ip dhcp pool SALES
+network 10.0.0.16 255.255.255.240
+default 10.0.0.17
+dns 10.0.0.17
+
+int g0/0/0
+no shut
+exit
+
+int gi0/0/0.10
+encap dot1q 10
+ip address 10.0.0.1 255.255.255.240
+ipv6 address 2001:ABBA:DBD1:1312::1/64
+exit
+
+int gi0/0/0.20
+encap dot1q 20
+ip address 10.0.0.17 255.255.255.240
+ipv6 address 2001:ABBA:DBD1:1313::1/64
+exit
+
+end
+write
