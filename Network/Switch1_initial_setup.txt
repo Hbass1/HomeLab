@@ -19,13 +19,13 @@ name sales
 exit
 
 int r fa0/1-12
-switchport mode access vlan 10
+switchport access vlan 10
 switchport m a
 no shut
 exit
 
 int r fa0/13-24
-switchport mode access vlan 20
+switchport access vlan 20
 switchport m a
 no shut
 exit
