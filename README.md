@@ -1,2 +1,2 @@
 # HomeLab
-Configurations and inodes
+My HomeLab setup and diagrams
