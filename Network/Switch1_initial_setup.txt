@@ -1,0 +1,39 @@
+Enable
+
+Config t
+
+hostname Switch1
+enable secret cisco
+
+line con 0
+password cisco
+login
+exit
+
+vlan 10
+name management
+exit
+
+vlan 20
+name sales
+exit
+
+int r fa0/1-12
+switchport mode access vlan 10
+switchport m a
+no shut
+exit
+
+int r fa0/13-24
+switchport mode access vlan 20
+switchport m a
+no shut
+exit
+
+int gi0/1
+switchport mode trunk
+no shut
+exit
+
+end
+write
