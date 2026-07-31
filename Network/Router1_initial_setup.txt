@@ -36,5 +36,20 @@ ip address 10.0.0.17 255.255.255.240
 ipv6 address 2001:ABBA:DBD1:1313::1/64
 exit
 
+int g0/0/1
+ip address dhcp
+exit
+
+ip domain name admin
+
+crypto key gen rsa
+
+line vty 0 15
+trans input ssh
+login local
+exit
+
+username admin password cisco
+
 end
 write
