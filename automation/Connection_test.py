@@ -8,7 +8,7 @@ cisco_device = {
     'secret': 'cisco',
 }
 
-print("Establishing connection to the device...")
+print("Establishing connection to device...")
 
 try:
     connection= ConnectHandler(**cisco_device)
@@ -20,9 +20,5 @@ try:
     connection.disconnect()
     print("Connection to the device has been closed.")
 
-    except Exception as e:
-        print(f"An error occurred: {e}")
-
-
-
-
+except Exception as e:
+    print(f"An error occurred: {e}")
